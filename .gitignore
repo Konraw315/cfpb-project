@@ -1,0 +1,13 @@
+# model artifacts
+models/
+*.joblib
+
+# training artifacts
+models_code/mlruns/
+models_code/catboost_info/
+models_code/mlflow.db
+models_code/optuna_study.db
+
+# python
+venv/
+__pycache__/

@@ -29,6 +29,37 @@ The deployed Streamlit application downloads the trained model from the separate
 - 🖥️ Interactive prediction interface with Streamlit
 - 🤗 Application and model deployment with Hugging Face Spaces and Hub
 
+## 🗜️ Data preprocessing and storage optimization
+
+The original raw dataset was stored as a CSV file with a size of approximately **7.0 GB**.
+
+After:
+
+* selecting only the relevant features,
+* cleaning and preprocessing the data,
+* assigning appropriate data types to each column,
+* and converting the dataset from CSV to the Parquet format,
+
+the final dataset size was reduced to approximately **48 MB**.
+
+This represents a reduction of more than **99%**, significantly improving storage efficiency, loading speed, and memory usage during model training.
+
+## 📊 Model performance
+
+The evaluated models were compared using the macro-averaged F1 score, which assigns equal importance to every target class.
+
+| Model                             | Configuration                                                | Macro F1 score |
+| --------------------------------- | ------------------------------------------------------------ | -------------: |
+| Dummy Classifier                  | Baseline                                                     |           0.17 |
+| Balanced Random Forest Classifier | Vanilla                                                      |           0.38 |
+| CatBoost Classifier               | Vanilla                                                      |           0.49 |
+| XGBoost Classifier                | Vanilla                                                      |           0.04 |
+| **XGBoost Classifier**            | **Balanced sample weights and Optuna hyperparameter tuning** |      **0.60** |
+
+The final XGBoost model achieved the best result. Applying balanced sample weights and tuning the model's hyperparameters with Optuna increased the macro F1 score to **0.60**, substantially outperforming all baseline configurations.
+
+
+
 ## 🔄 Application flow
 
 ### Public Hugging Face demo

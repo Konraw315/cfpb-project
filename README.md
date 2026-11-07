@@ -205,11 +205,6 @@ The Streamlit application sends prediction requests to the FastAPI backend.
 8. Train the final model
 9. Save the model artifacts locally
 
-
-## 📄 License
-
-Licensed under the Apache License 2.0. See [LICENSE](LICENSE).
-
 ## 🙋 Author
 
 **Konrad Walkowiak**
